@@ -110,6 +110,27 @@ const handlePutReq = async (Id) => {
             <div className='add-btn-div'>
                 <button className='add-btn' onClick={HandlePostReQ} > Add</button>
             </div>
+
+
+
+            <div className="container">
+                {
+                    data.map((product) => (
+                        <div key={product.id} className="card">
+                            <img className="images" src={product.image} alt="" />
+                            <h4>Title  :- {product.category} </h4>
+                            <h4>Title  :-  {product.title} </h4>
+                            <h4>Price  :- {product.price} </h4>
+                            <br />
+                            <button className='delet-btn' onClick={() => HandleDelete(product.id)} > Delete</button>
+                        </div>
+                    ))
+                }
+                {loading && <h1 className='loadingtext'>Loading...</h1>}
+            </div>
+            <div className='add-btn-div'>
+                <button className='add-btn' onClick={HandlePostReQ} > Add</button>
+            </div>
         </>
     )
 }
